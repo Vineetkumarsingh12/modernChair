@@ -1,0 +1,447 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+  *,*::before,*::after {
+margin: 0;
+padding:0;
+box-sizing: border-box;
+  }
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #fff;
+    background-color: #1f2029;
+    min-height: 100vh;
+    margin: 0;
+    padding:0;
+
+    overflow-x: none;
+}  
+p{
+    font-size: 16px;  
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    overflow-x:hidden;
+    overflow-y: auto;
+}  
+
+.container{
+    position: relative;
+    /*  */
+    max-width: calc(100%-40px);
+    /*  */
+    width:860px;
+    margin: 0 auto;
+    display: flex;  
+    flex-wrap: wrap;
+    padding:100px 0;
+}
+
+.moreInfo{
+    position: relative;
+    width: 100%;
+    display: block;
+
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    /* why these */
+    position: absolute;
+
+    visibility: hidden;
+}
+
+
+/*  adjancet sibling selector   */
+.btn:checked + label,.btn:not(:checked) + label{
+    position: relative;
+    height: 40px;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    width: 40px;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    color:#ffeba7;
+    margin-right:10px;
+    box-shadow: 0 12px 35px 0 rgba(16,39,112,0.25);
+    z-index: 10;
+   background-position: center;
+   background-size: cover;
+   background-color: red;
+   border: 3px solid transparent;
+
+
+}
+
+
+.btn:checked + label{
+    border-color: #434343;
+    transform: scale(1.1);
+}
+
+label.firstColor{
+    margin-left: 500px;
+    background-image:url(red.jpg) ;
+}
+label.secondColor{
+    background-image:url(yellow.jpg) ;
+}
+label.thirdColor{
+    background-image:url(brown.jpg) ;
+}
+label.fourColor{
+    background-image:url(black.jpg) ;
+}
+.chairImg{
+    position: absolute;
+    top: 100px;
+    left:0;
+    width: 500px;
+    height: 410px;
+    display: inline-block;
+    z-index: 9;
+    transition: all 550ms linear;
+    transition-delay:100ms ;
+    background-position: center top;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image:url(redChair.png) ;
+    opacity: 0;
+}
+
+.color-1:checked ~ .chairImg.chair1{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36,0.07,.019,0.97) both;
+    
+}
+.color-2:checked ~ .chairImg.chair2{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36,0.07,.019,0.97) both;
+    background-image: url(yellowChair.png);
+}
+.color-3:checked ~ .chairImg.chair3{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36,0.07,.019,0.97) both;
+    background-image: url(browChair.png);
+}
+.color-4:checked ~ .chairImg.chair4{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36,0.07,.019,0.97) both;
+    background-image: url(blackChair.png);
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+
+  .backColor{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+
+    /* ???????? */
+    /* display: block; */
+
+    z-index: 1;
+    background-image: linear-gradient(196deg,#f1a9a9,#e66767);
+    transition: all 250ms linear
+    ;
+    transition-delay: 300ms;
+    
+
+  }
+  .backColor.chair2{
+    background: linear-gradient(darkgoldenrod, gold);
+ opacity: 0;
+  }
+  
+  .color-2:checked ~ .backColor.chair2{
+    opacity: 1;
+  }
+
+  .backColor.chair3{
+    background: linear-gradient(to right, brown, saddlebrown);
+
+    opacity: 0;
+  }
+  .color-3:checked ~ .backColor.chair3{
+    opacity: 1;
+  }
+
+  .backColor.chair4{
+    background-image: linear-gradient(196deg,#4c4c4c,#262626);
+    opacity: 0;
+    
+  }
+  .color-4:checked ~ .backColor.chair4{
+    opacity: 1;
+  }
+  .info{
+    position: relative;
+    margin-left: 500px;
+    z-index: 10;
+    display: block;
+    text-align: left;
+  }
+
+  .tittle{
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    line-height: 1.2;
+    color:#fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+.h2{
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+
+}
+h4{
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.2;
+    color:#fff;
+    margin-top:0;
+    margin-bottom: 30px;
+
+
+}
+h4 span{
+    /*   */
+    text-decoration: line-through;
+    font-size: 20px;
+    opacity: 0.6;
+    padding-left:15px;
+
+}
+
+h5{
+    font-family: 600;
+    font-size:18px;
+    line-height: 1.2;
+    color:#fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+ 
+.infobtn:checked + label, .infobtn:not(:checked)+label{
+    position: relative;
+    transition: all 200ms linear;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+    margin-right: 25px;
+    opacity: 0.5;
+}
+.infobtn:checked + label{
+    opacity: 1;
+}
+.infobtn:not(:checked)+label{
+    opacity: 0.8;
+}
+
+.hidden{
+   padding-top: 20px; 
+   padding-bottom: 30px;
+   transition:all 250ms linear;
+   opacity:0;
+   overflow: hidden;
+
+   /* ???????????? */
+   pointer-events:none;
+   transform: translateY(20px);
+   
+}
+
+.details.hidden{
+    position:absolute;
+    top:25px;
+    left:0;
+    width:100%;
+    z-index: 2;
+}
+#description:checked ~ .infodescription.hidden{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#details:checked ~ .details.hidden{
+   
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.inlineSection{
+    position: relative;
+    display: inline-block;
+    margin-right:20px;
+}
+.inlineSection p span{
+    font-size:30px;
+    line-height: 1.1;
+}
+
+.checkOut{
+    position: relative;
+    left: 500px;
+} 
+.btn1{
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+    height: 48px;
+    border-radius: 4px;
+    width: 210px;
+    letter-spacing: 1px;
+gap:5px;
+/*  */
+    display: inline-flex;
+
+
+
+align-items: center;
+justify-content: center;
+border: none;
+cursor: pointer;
+overflow: hidden;
+background-color: transparent;
+color: #fff;
+box-shadow: 0 6px 15px 0 rgba(16,39,112,0.15);
+transition: all 250ms linear;
+text-decoration: none;
+margin-top: 50px;
+z-index: 5;
+}
+.btn1::before{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+    background-color: #944852;
+    transition: background-color 250ms 300ms ease;
+}
+
+.color-4:checked ~ .checkOut .btn1:before{
+  background-color: #1a1a1a;  
+}
+
+.color-3:checked ~ .checkOut .btn1:before{
+    background-color: #964B00;
+  }
+  .color-2:checked ~ .checkOut .btn1:before{
+    background-color: #8B8000;
+  }
+  .btn1::after{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width:0%;
+    height: 5%;
+    content: "";
+    z-index: 10;
+    background-color: #fff;
+    transition:  width 0.5s 300ms ease;
+  }
+  .checkOut:hover .btn1::after {
+width: 100%;
+  }
+
+
+
+  /* for small screen */
+
+  @media only screen and (max-width: 900px){
+
+    .chairImg{
+        width: 300px;
+    height: 300px;
+      
+        top: 50;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(50%);
+       
+    }
+   .info{
+    
+    margin: 300px 5%;
+    margin-right: 10%;
+   
+
+   }
+
+   .infodescription{
+    width:400px;
+   }
+.checkOut{
+    position:absolute;
+    left:40px;
+    top:720px;
+}
+label.firstColor{
+    margin-left: -490px; 
+
+}
+
+label.pos{
+    margin-top: 610px; 
+}
+  }
+@media only screen and (max-width: 700px){
+    .chairImg{
+    
+        transform: translateX(20%);
+       
+    }
+    .info{
+    
+        margin: 300px 2.9%;
+        margin-right: 10%;
+       
+    
+       }
+}
+  
+
+
+
